@@ -23,7 +23,7 @@ Each exercise is contained in a separate file with a descriptive name. The files
 To get started with the exercises, you can clone this repository to your local machine using the following command:
 
 ```
-git clone https://github.com/your-username/practice-exercises.git
+git clone https://github.com/lnhchau/practice-exercises.git
 ```
 
 Once you have cloned the repository, you can navigate to the `exercises` directory and open the Jupyter Notebook for the exercise you want to work on.
