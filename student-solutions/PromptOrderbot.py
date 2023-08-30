@@ -6,7 +6,7 @@ import datetime
 from .config import settings
 
 def get_completion_from_messages(messages, model="gpt-3.5-turbo"):
-    openai.api_key  = settings.OPENAI_API_KEY
+    openai.api_key  = "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"
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
