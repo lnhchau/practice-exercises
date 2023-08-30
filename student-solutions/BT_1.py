@@ -2,6 +2,7 @@
 import openai
 import os
 from .config import settings
+
 openai.api_key  = "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"
 def get_completion(prompt, model="gpt-3.5-turbo"): # Andrew mentioned that the prompt/ completion paradigm is preferable for this class
     messages = [{"role": "user", "content": prompt}]
