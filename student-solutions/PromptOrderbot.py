@@ -6,7 +6,7 @@ import datetime
 # from .config import settings
 
 def get_completion_from_messages(messages, model="gpt-3.5-turbo"):
-    openai.api_key  = "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"
+    openai.api_key  = ""
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         Make sure to clarify all options, extras and sizes to uniquely identify the item from the menu.\
         Once the order is confirmed, you will extract the current time and collect it along with the order details. \
         You respond in a short, very conversational friendly style. \
-        At the end of the conversation, respond the text below without formatting or translating::
+        At the end of the conversation, respond the text below without formatting or translating:
         ```See you later!``` \
         Note: Using the language of the buyer to respond.
         """} ] # accumulate messages
