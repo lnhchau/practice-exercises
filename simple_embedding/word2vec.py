@@ -71,6 +71,13 @@ class word2vec():
 
     # BACKPROPAGATION
     def backprop(self, e, h, x):
+        """Updates the weights 1, 2 of the object
+
+        Args:
+            e (_type_): _description_
+            h (_type_): _description_
+            x (_type_): _description_
+        """
         dl_dw2 = np.outer(h, e)  
         dl_dw1 = np.outer(x, np.dot(self.w2, e.T))
 
@@ -82,6 +89,11 @@ class word2vec():
 
     # TRAIN W2V model
     def train(self, training_data):
+        """Returns the loss of each epoch of training data
+
+        Args:
+            training_data (_type_): _description_
+        """
         # INITIALIZE WEIGHT MATRICES
         self.w1 = np.random.uniform(-0.8, 0.8, (self.v_count, self.n))     # embedding matrix
         self.w2 = np.random.uniform(-0.8, 0.8, (self.n, self.v_count))     # context matrix
@@ -141,6 +153,12 @@ class word2vec():
 
     # input word, returns top [n] most similar words
     def word_sim(self, word, top_n):
+        """Returns similarity of each word in list of words
+
+        Args:
+            word (str): _description_
+            top_n (int): _description_
+        """
         
         w1_index = self.word_index[word]
         v_w1 = self.w1[w1_index]
