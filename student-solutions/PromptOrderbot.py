@@ -3,10 +3,10 @@ import time
 import openai
 import datetime
 
-from .config import settings
+# from .config import settings
 
 def get_completion_from_messages(messages, model="gpt-3.5-turbo"):
-    openai.api_key  = "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"
+    openai.api_key  = ""
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
@@ -42,10 +42,10 @@ def get_order_info(context):
     )
 
     try:
-        response = get_completion_from_messages(messages, temperature=0)
+        response = get_completion_from_messages(messages)
     except:
         time.sleep(20) # Limit of chatgpt accounts allowed
-        response = get_completion_from_messages(messages, temperature=0)
+        response = get_completion_from_messages(messages)
     return response
 
 def get_ordering_time(response):
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         Make sure to clarify all options, extras and sizes to uniquely identify the item from the menu.\
         Once the order is confirmed, you will extract the current time and collect it along with the order details. \
         You respond in a short, very conversational friendly style. \
-        At the end of the conversation, respond the text below without formatting or translating::
+        At the end of the conversation, respond the text below without formatting or translating:
         ```See you later!``` \
         Note: Using the language of the buyer to respond.
         """} ] # accumulate messages
