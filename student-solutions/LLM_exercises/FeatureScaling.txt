@@ -1,0 +1,6 @@
+Research về Feature Scaling
+
+1. Phân tích các cách feature scaling. Ví dụ Min max scaler, standard scaler 
+https://www.baeldung.com/cs/normalization-vs-standardization?fbclid=IwAR3CFiw6NLq3Zh_Ah0u7MudVy7lV_d8tTYM-XsjtSpvey-_ZRCCxolpmceI
+
+2. Ảnh hưởng của feature scaling về mặt toán học trong việc tối ưu training model. 
