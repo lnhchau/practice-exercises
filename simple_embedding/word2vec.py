@@ -105,10 +105,8 @@ class word2vec():
 
             # CYCLE THROUGH EACH TRAINING SAMPLE
             for w_t, w_c in training_data:
-
                 # FORWARD PASS
                 y_pred, h, u = self.forward_pass(w_t)
-                
                 # CALCULATE ERROR
                 EI = np.sum([np.subtract(y_pred, word) for word in w_c], axis=0)
 
