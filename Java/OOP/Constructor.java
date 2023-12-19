@@ -5,25 +5,24 @@ class Car_2 {
     // Constructor for Car_2
     public Car_2(String brand, String number_plate) {
         /*
-        Từ khóa this dùng để phân biệt giữa biến của class và tham số
+        Từ khóa this (self, biến của class) => Phân biệt giữa biến của class / tham số.
         Nếu tham số có tên khác với tên biến của class thì có thể không cần dùng this.
-        */ 
+        */
         this.brand = brand;
         this.number_plate = number_plate;
     }
-    // Một class có thể có nhiều constructor, chỉ cần khác parameter truyền vào. 
+
+    // Một class có thể có nhiều constructor (init), cùng tên khác input parameters 
+    // => Truyền bộ input nào thì vào constructor ấy => chỉ available các params trong đó
     public Car_2(){
         this.brand = "BMW";
         this.number_plate = "000";
     }
 
-
     // Getter methods for brand and number_plate
-
     public String getBrand() {
         return brand;
     }
-
     public String getNumberPlate() {
         return number_plate;
     }

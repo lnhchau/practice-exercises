@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalTime;
 
-/**
+/** SUMMARY: Input params of a class can be an object from other class
  * Represents a menu with an ID, time, list of foods, and corresponding prices.
  */
 class Menu {
@@ -14,7 +14,10 @@ class Menu {
     /**
      * Default constructor for the Menu class.
      */
-    public Menu() {}
+    public Menu(ArrayList<String> foods, ArrayList<Double> prices) {
+        this.foods = foods;
+        this.prices = prices;
+    } // Overloading by below constructor
 
     /**
      * Constructs a menu with the specified ID, time, foods, and prices.
@@ -25,7 +28,10 @@ class Menu {
      * @param prices The corresponding prices for each food in the menu.
      */
     public Menu(int id, LocalTime time, ArrayList<String> foods, ArrayList<Double> prices) {
-
+        this.id = id;
+        this.time = time;
+        this.foods = foods;
+        this.prices = prices;
     }
 
     /**
@@ -43,9 +49,14 @@ class Menu {
      * @param food The name of the food.
      * @return The price of the specified food.
      */
-    public double getPriceFood(String food) {
-        double price = 0;
-        // continue
+    public Double getPriceFood(String food) {
+        int order_food_index = 0;
+        for (int i = 0; i < foods.size(); i++) {
+            if (foods.get(i) == food) {
+                order_food_index = i;
+            }
+        }
+        Double price = prices.get(order_food_index);
         return price;
     }
 }
@@ -65,8 +76,10 @@ class Restaurant {
      * @param address The address of the restaurant.
      * @param menus   The list of menus available in the restaurant.
      */
-    public Restaurant(String name, String address, ArrayList<Menu> menus) {
-
+    public Restaurant(String name, String address, ArrayList<Menu> menus) { // Init function
+        this.name = name;
+        this.address = address;
+        this.menus = menus;
     }
 
     /**
@@ -76,8 +89,16 @@ class Restaurant {
      * @param foods  The list of foods to order.
      * @return The total bill for the order.
      */
-    public double order(int menuId, List<String> foods) {
-        double total_bill = 0;
+    public Double order(int menuId, List<String> foods) {
+        Double total_bill = 0.0;
+        for (int i = 0; i < menus.size(); i++) {
+            if (menus.get(i).getId() == menuId) {
+                for (String food : foods) {
+                    total_bill += menus.get(i).getPriceFood(food);
+                    System.out.println("Food: " + food + "\nBill: " + total_bill);
+                }
+            }
+        }
         // Continue
         return total_bill;
     }
@@ -127,11 +148,11 @@ public class Restaurant_system {
             menus
         );
 
-        double total_bill = restaurant.order(2,new ArrayList<String>(){{
+        Double total_bill = restaurant.order(2,new ArrayList<String>(){{
                 add("thit kho");
                 add("thit kho");
                 add("trung chien");
             }});
-        System.out.println("Total bill of order is: "+total_bill);
+        System.out.println("Total bill of order is: " + total_bill);
     }
 }

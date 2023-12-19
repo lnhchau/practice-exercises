@@ -23,7 +23,9 @@ abstract class Shape {
      * Prints information about the shape, including its area and perimeter.
      */
     protected void getInfo() {
-        // continue
+        System.out.println("The Area: " + getArea());
+        System.out.println("The Perimeter: " + getPerimeter());
+
     }
 }
 
@@ -42,6 +44,8 @@ class Rectangle extends Shape {
      * @param height The height of the rectangle.
      */
     public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
     }
 
     /**
@@ -50,8 +54,8 @@ class Rectangle extends Shape {
      * @return The area of the rectangle.
      */
     public double getArea() {
-        // continue
-        return 0;
+        double area = this.width * this.height;
+        return area;
     }
 
     /**
@@ -60,8 +64,8 @@ class Rectangle extends Shape {
      * @return The perimeter of the rectangle.
      */
     public double getPerimeter() {
-        // continue
-        return 0;
+        double perimeter = (this.width + this.height)*2;
+        return perimeter;
     }
 }
 
@@ -78,7 +82,7 @@ class Square extends Shape {
      * @param side The side length of the square.
      */
     public Square(double side) {
-        // continue
+        this.side = side;
     }
 
     /**
@@ -87,8 +91,8 @@ class Square extends Shape {
      * @return The area of the square.
      */
     public double getArea() {
-        // continue
-        return 0;
+        double area = this.side*this.side;
+        return area;
     }
 
     /**
@@ -97,8 +101,8 @@ class Square extends Shape {
      * @return The perimeter of the square.
      */
     public double getPerimeter() {
-        // continue
-        return 0;
+        double perimeter = this.side*4;
+        return perimeter;
     }
 }
 
@@ -109,7 +113,7 @@ public class Shape_system {
 
     /**
      * Main method to create shapes and print their information.
-     *
+     * 
      * @param args Command-line arguments (not used in this example).
      */
     public static void main(String args[]) {

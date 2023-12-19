@@ -3,4 +3,4 @@ https://docs.google.com/document/d/1VTVr3_K4AtpD6vZj0A1ZSK-ewPu9hhRbmnsZIqS5PZo/
 
 Bài tập là hoàn thành tiếp file : 
 1. `Shape_system.java` 
-2. `Restaurant_system.java`, 
+2. `Restaurant_system.java`
